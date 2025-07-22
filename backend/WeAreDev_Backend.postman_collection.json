@@ -1,0 +1,162 @@
+{
+  "info": {
+    "_postman_id": "wearedev-backend-collection-001",
+    "name": "WeAreDev Backend API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Colección de endpoints del backend para WeAreDev Challenge."
+  },
+  "item": [
+    {
+      "name": "Usuario - Registro",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"testuser\",\n  \"email\": \"testuser@example.com\",\n  \"password\": \"SuperSecret123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/users/register/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "users", "register", ""]
+        }
+      }
+    },
+    {
+      "name": "Usuario - Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"testuser@example.com\",\n  \"password\": \"SuperSecret123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/users/login/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "users", "login", ""]
+        }
+      }
+    },
+    {
+      "name": "Usuario - Listar todos",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/api/users/users/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "users", "users", ""]
+        }
+      }
+    },
+    {
+      "name": "Tarea - Crear",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"description\": \"Comprar leche\",\n  \"due_date\": \"2024-07-23T18:00:00Z\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/users/tasks/1/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "users", "tasks", "1", ""]
+        }
+      }
+    },
+    {
+      "name": "Tarea - Listar por usuario",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/api/users/tasks/1/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "users", "tasks", "1", ""]
+        }
+      }
+    },
+    {
+      "name": "Tarea - Detalle",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/api/users/tasks/detail/1/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "users", "tasks", "detail", "1", ""]
+        }
+      }
+    },
+    {
+      "name": "Tarea - Actualizar",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"description\": \"Comprar leche y pan\",\n  \"due_date\": \"2024-07-24T18:00:00Z\",\n  \"status\": \"postponed\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/users/tasks/detail/1/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "users", "tasks", "detail", "1", ""]
+        }
+      }
+    },
+    {
+      "name": "Tarea - Eliminar lógica",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8000/api/users/tasks/detail/1/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "users", "tasks", "detail", "1", ""]
+        }
+      }
+    },
+    {
+      "name": "Tarea - Cambiar estado",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"completed\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/users/tasks/status/1/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "users", "tasks", "status", "1", ""]
+        }
+      }
+    }
+  ]
+} 
