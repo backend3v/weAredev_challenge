@@ -2,3 +2,10 @@
 DJANGO_SECRET_KEY=your_secret_key_here
 DJANGO_DEBUG=True
 DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
+
+
+# POSTGRES
+
+POSTGRES_DB=wearedev_db
+POSTGRES_USER=wearedev_user
+POSTGRES_PASSWORD=wearedev_pass
