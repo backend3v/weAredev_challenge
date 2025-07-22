@@ -1,7 +1,1 @@
-# Domain Repository Interfaces
-# Define abstract repository interfaces for the domain layer.
-# These should not depend on Django ORM or any infrastructure.
-
-# Example interface (to be replaced with real implementation):
-# class TaskRepository:
-#     pass 
+# Repositories have been split into separate files: user_repository.py and task_repository.py 
