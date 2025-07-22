@@ -35,6 +35,7 @@ backend/
 - Django REST Framework
 - PostgreSQL (usando Docker Compose)
 - python-dotenv
+- drf-spectacular (para documentación OpenAPI/Swagger)
 
 ## Variables de entorno (`.env`)
 
@@ -66,6 +67,12 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
+
+## Documentación interactiva de la API
+
+- **Swagger UI:** [http://localhost:8000/api/docs/](http://localhost:8000/api/docs/)
+- **Redoc:** [http://localhost:8000/api/redoc/](http://localhost:8000/api/redoc/)
+- **Esquema OpenAPI:** [http://localhost:8000/api/schema/](http://localhost:8000/api/schema/)
 
 ## Endpoints de usuario
 
@@ -128,3 +135,11 @@ python manage.py runserver
   "status": "completed"
 }
 ```
+
+## Notas de seguridad y buenas prácticas
+- Contraseñas siempre hasheadas, nunca en texto plano.
+- Validación y manejo de errores en todos los endpoints.
+- Arquitectura desacoplada y testeable.
+
+## Contacto
+Para dudas o mejoras, contacta a [tu nombre o email].
