@@ -1,0 +1,32 @@
+<div class="task-list-container">
+  <h2>My Tasks</h2>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <!-- Formulario para crear nueva tarea -->
+  <app-task-form [userId]="userId" (taskSaved)="onTaskSaved($event)"></app-task-form>
+
+  <ul *ngIf="tasks.length > 0; else noTasks">
+    <li *ngFor="let task of tasks" [class.completed]="task.status === 'completed'">
+      <div class="task-main">
+        <span class="desc">{{ task.description }}</span>
+        <span class="status">[{{ task.status }}]</span>
+        <button type="button" (click)="editTask(task)">Edit</button>
+        <button type="button" (click)="deleteTask(task.task_id)">Delete</button>
+        <select [value]="task.status" (change)="changeStatus(task.task_id, $event.target.value)">
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+          <option value="postponed">Postponed</option>
+        </select>
+      </div>
+      <div class="meta">
+        <span>Due: {{ task.due_date | date:'short' }}</span>
+        <span *ngIf="task.deleted" class="deleted">(Deleted)</span>
+      </div>
+      <!-- Formulario de edición en línea -->
+      <app-task-form *ngIf="editingTask?.task_id === task.task_id" [userId]="userId" [task]="editingTask" (taskSaved)="onTaskEdited($event)"></app-task-form>
+    </li>
+  </ul>
+  <ng-template #noTasks>
+    <div class="no-tasks">No tasks found.</div>
+  </ng-template>
+</div> 

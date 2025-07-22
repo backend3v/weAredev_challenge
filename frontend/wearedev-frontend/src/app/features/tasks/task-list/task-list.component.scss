@@ -1,0 +1,73 @@
+$primary: #1C2654;
+$secondary: #00B5DB;
+$success: #25D366;
+$background: #E7E7E7;
+
+.task-list-container {
+  background: $background;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+  h2 {
+    color: $primary;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      background: #fff;
+      border: 1px solid $secondary;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      &.completed {
+        background: $success;
+        color: #fff;
+        .status {
+          color: #fff;
+        }
+      }
+      .task-main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.1rem;
+        .desc {
+          font-weight: 500;
+        }
+        .status {
+          font-size: 0.95rem;
+          color: $secondary;
+        }
+      }
+      .meta {
+        font-size: 0.9rem;
+        color: $primary;
+        margin-top: 0.5rem;
+        .deleted {
+          color: red;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .no-tasks {
+    text-align: center;
+    color: $primary;
+    margin-top: 2rem;
+  }
+  .error {
+    color: red;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+} 
