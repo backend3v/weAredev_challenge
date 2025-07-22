@@ -1,11 +1,52 @@
-# Django environment variables
-DJANGO_SECRET_KEY=your_secret_key_here
-DJANGO_DEBUG=True
-DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
+# Entornos virtuales
+venv/
+env/
+ENV/
+.venv/
 
+# Archivos de entorno y variables sensibles
+.env
+*.env
+backend/.env
+backend/env_example
 
-# POSTGRES
+# Archivos de base de datos locales
+*.sqlite3
 
-POSTGRES_DB=wearedev_db
-POSTGRES_USER=wearedev_user
-POSTGRES_PASSWORD=wearedev_pass
+# Archivos de migraciones de Django (opcional, pero normalmente se versionan)
+# Si quieres ignorar migraciones, descomenta la siguiente línea:
+# **/migrations/
+
+# Archivos de caché de Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Archivos de logs
+*.log
+
+# Archivos de configuración de editores/IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Archivos de Docker
+backend/postgres_data/
+postgres_data/
+*.pid
+
+# Archivos de compilación
+*.egg-info/
+dist/
+build/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de coverage/testing
+htmlcov/
+.coverage
+.tox/
+.pytest_cache/
