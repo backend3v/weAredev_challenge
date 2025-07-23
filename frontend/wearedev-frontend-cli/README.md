@@ -52,7 +52,6 @@ src/app/
 - Angular CLI 17+
 
 ## Troubleshooting
-- Si tienes errores de `standalone`, elimina cualquier línea `standalone: true` o `standalone: false` en los decoradores `@Component`.
 - Si el build falla, elimina `node_modules` y `dist`, luego ejecuta `npm install` y `ng serve`.
 
 ---
